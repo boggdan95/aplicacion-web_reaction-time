@@ -1,0 +1,101 @@
+input[type=text],input[type=password],input[type=email]{
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    display: inline-block;
+    margin: 8px 0;
+    padding: 8px 10px;
+}
+
+label {
+    display: inline-block;
+    font-family: 'Helvetica', 'Verdana', sans-serif;
+    padding-right:10px;
+    text-align: right;
+    width: 115px;
+}
+
+button[type=submit], #btn_save {
+  -moz-border-radius: 28;
+  -webkit-border-radius: 28;
+  background: #3cb0fd;
+  border-radius: 28px;
+  border: solid #000000 3px;
+  color: #ffffff;
+  font-family: Courier New;
+  font-size: 26px;
+  padding: 13px 40px 11px 40px;
+  position: relative;
+}
+
+button[type=submit]:hover, #btn_save:hover {
+  background: #33cc33;
+  text-decoration: none;
+}
+
+
+/*COLORES CSS*/
+
+/* Hide the browser's default radio button */
+.control-group {
+  display: inline-block;
+  height: 100px;
+  margin: 10px;
+  padding: 30px;
+  text-align: left;
+  vertical-align: top;
+  width: 200px;
+}
+
+.radiobtn {
+  display: none;
+}
+.buttons {
+  background: none;
+  margin-left: -40px;
+}
+.buttons .li_rdn {
+  display: block;
+}
+.buttons .li_rdn label{
+  left: -25px;
+  padding-left: 30px;
+  position: relative;
+}
+.buttons .li_rdn label:hover {
+  cursor: pointer;
+}
+.buttons .li_rdn span {
+  background: #fff;
+  border: 2px solid #ccc;
+  display: inline-block;
+  height: 18px;
+  position: relative;
+  top: 5px;
+  width: 18px;
+}
+#rdbtn1:checked + #span_1::before{
+  content: '';
+  border: 2px solid #fff;
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background-color: #0066ff;
+}
+
+#rdbtn2:checked + #span_2::before{
+  content: '';
+  border: 2px solid #fff;
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background-color: #ff3300;
+}
+
+#rdbtn3:checked + #span_3::before{
+  content: '';
+  border: 2px solid #fff;
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background-color: #33cc33;
+}

@@ -1,0 +1,12 @@
+{
+  "name": "raspberry_entrenamiento",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/boggdan95/raspberry_entrenamiento.git",
+  "author": "boggdan95 <bandabog@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.4",
+    "socket.io": "^2.1.1"
+  }
+}

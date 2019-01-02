@@ -1,0 +1,33 @@
+﻿{% extends "base.html" %}
+
+{% block static %}
+    {% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'training/styles/theme.css' %}">
+{% endblock static %}
+{% block content %}
+<div id="header">
+    <h1 class="title">Quick Trainner</h1>
+    <p class="text1">{{user}}, tu opinión es importante para nosotros</p>
+</div>
+<div id="content" style="margin:0 auto;max-width:50%;">
+    <p class="text2 center">Si tiene dudas acerca de una función o problemas con el funcionamiento Quick Traineer puede escribirnos al correo:</p> 
+        <p class="text2 center bold">bar14484@uvg.edu.gt</p> 
+        <p class="text2 center">ó</p> 
+        <p class="text2 center bold">bandabog@gmail.com</p> 
+    <p class="text2 center">
+        <br>También consultar el manual de usuario o ver la sección de preguntas frecuentes para solucionar el problema.
+        <br><br> Si tiene problemas accediendo a su usuario o ha olvidado su contraseña puede acceder al usuario de administrador para realizar modificaciones a la contraseña del usuario.
+        Para solicitar las credenciales de Administrador, puede enviar un correo a la dirección anteriormente descrita.
+    </p>
+</div>
+{% endblock content %}
+{% block bar %}
+<div id="footer">
+    <ul class="menuBar">
+        <li><a href="faq.html" class="bar_option">Preguntas frecuentes</a></li>
+        <li><a href="contact.html" class="bar_option">Contáctanos</a></li>
+        <li><a href="homepage.html" class="bar_option">Inicio</a></li>
+    </ul>
+</div>
+{% endblock bar %}
+

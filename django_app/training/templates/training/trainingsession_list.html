@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block static %}
+    {% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'training/styles/theme_train.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'training/styles/theme.css' %}">   
+{% endblock static %}
+{% block content %}
+<div id="main">
+    <div id="header">
+        <h1 class="title">Quick Trainner</h1>
+        <p class="text1">Consulta tus entrenameintos, {{user}}</p>
+    </div>
+    <div style="margin: 0px auto">
+        <h3 class="title1">Entrenamientos</h3>
+    </div>
+    <div id="consult_panel" class="content">
+            <form action="/consultTraining" method="post">
+            {% if messages %}
+              {% for message in messages %}
+              <div class="alert">
+                  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                  <strong>{{ message }}</strong> 
+              </div>
+              {% endfor %}
+            {% endif %}
+            {% csrf_token %}
+            {% for TrainingSession in session_list %}
+            <div id="div {{TrainingSession.id}}" class="square_div" style="display:block; margin: 0 auto; text-align: center;">
+                <label style="margin: 0 auto">
+                    <input type="radio" id="{{TrainingSession.id}}"name="group_radio" class="form-radio" value="{{TrainingSession.id}}">    
+                    <p class="text3 text_block bold">Entrenamiento id:</p>
+                    <p class="text3 text_block">{{ TrainingSession.id }}</p>
+                    <p class="text3 text_block bold">Fecha:</p>
+                    <p class="text3 text_block">{{ TrainingSession.time }}</p>
+                    <p class="text3 text_block bold">Usuario:</p>
+                    <p class="text3 text_block">{{ TrainingSession.user }}</p>
+                    <p class="text3 text_block bold">Tiempo de entrenamiento:</p>
+                    <p class="text3 text_block">{{ TrainingSession.description.time }}</p>
+                    <p class="text3 text_block bold">Repeticiones:</p>
+                    <p class="text3 text_block">{{ TrainingSession.description.reps }}</p>
+                    <p class="text3 text_block bold">Módulos:</p>
+                    <p class="text3 text_block">{{ TrainingSession.description.modules }}</p>
+                </label>      
+            </div>
+            {% endfor %}
+            <div class="subcontent" style="padding: 10px 40px 11px 40px">
+                <a href="user.html" ><button type="button" class="btn_return">Regresar</button></a>
+                <input type="submit" class="button" value="Consultar resultados">
+            </div>
+            </form>
+    </div>
+{% endblock %}
+{% block bar %}
+    <div id="footer">
+        <ul class="menuBar">
+            <li><a href="faq.html" class="bar_option">Preguntas frecuentes</a></li>
+            <li><a href="contact.html" class="bar_option">Contáctanos</a></li>
+            <li><a href="homepage.html" class="bar_option">Inicio</a></li>
+        </ul>
+    </div>
+</div>
+{% endblock bar %}

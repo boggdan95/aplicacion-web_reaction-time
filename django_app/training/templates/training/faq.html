@@ -1,0 +1,36 @@
+﻿{% extends "base.html" %}
+
+{% block static %}
+    {% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'training/styles/theme.css' %}">
+{% endblock static %}
+{% block content %}
+<div id="header">
+    <h1 class="title">Quick Trainner</h1>
+    <p class="text1">{{user}}, esperamos que las siguientes respuestas, resuelvan tus dudas</p>
+</div>
+<div id="content">
+    <div id="div_text">
+            <p class="bold text2 center">¿Qué es Quick Trainner?</p>
+            <p class="text2 center">Es una aplicación web que permite crear ejercicios de tiempo de reacción. Los ejercicios activan estímulos visuales y la respuesta se captura al presionar un botón.</p>
+            <p class="bold text2 center">Tiempos de reacción complejo y sencillo ¿Qué son?</p>
+            <p class="text2 center">El tiempo de reacción es la cantidad de tiempo que transcurre desde que se activa un estímulo hasta que se da una respuesta a el. El tipo sencillo consiste en dar única respuesta a un estímulo único. El complejo implica disintitos estímulos y solo se debe reaccionar a uno.   </p>
+            <p class="bold text2 center">¿Qué es el modo captura?</p>
+            <p class="text2 center">Modo especializado donde se utiliza un módulo especializado para la captación de tiempo de reacción, en este se activa el estímulo visual y permanece así hasta que el usuario reacciona. Se añade aletoridad a la activación, se activa nuevamente luego de 1 a 4 segundos de haber reaccionado al estímulo previo.</p>
+            <p class="bold text2 center">¿Cómo programar su entreno?</p>
+            <p class="text2 center">Debe seleccionar el tipo de tiempo de reacción a entrenar, simple o complejo. Tiempo total del entrenamiento,cantidad de estímulos a utilizar y la periodicidad de activación.</p>
+            <p class="bold text2 center">¿Cómo interpretar los resultados?</p>
+            <p class="text2 center">Los tiempos resultantes están medidos en milisegundos y puede obtener tres tipo de resultado, acierto, desacierto o error. El desacierto sucede si el estímulo se apaga automaticamente y el error es causado si reacciona ante un receptor no asociado al estímulo activado.</p>
+    </div>
+</div>
+{% endblock content %}
+{% block bar %}
+<div id="footer">
+    <ul class="menuBar">
+        <li><a href="faq.html" class="bar_option">Preguntas frecuentes</a></li>
+        <li><a href="contact.html" class="bar_option">Contáctanos</a></li>
+        <li><a href="homepage.html" class="bar_option">Inicio</a></li>
+    </ul>
+</div>
+        </div>
+{% endblock bar %}

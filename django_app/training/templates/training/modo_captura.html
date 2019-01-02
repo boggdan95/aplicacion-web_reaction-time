@@ -1,0 +1,46 @@
+﻿{% block static %}
+    {% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'training/styles/theme_game.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'training/styles/theme_train.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'training/styles/theme.css' %}">
+<script type="text/javascript" src="{% static 'training/scripts/script.js' %}"></script>
+{% endblock static %}
+{% block content %}
+<div id="main">
+    <div id="header">
+        <h1 class="title">Quick Trainner </h1>
+        <p class="text1">{{user}}, prueba el módulo de captación</p>
+    </div>
+    <div id="content">
+        <div class="instruction_cointainer">
+            <form action="/createCapture" method="post">
+            {% csrf_token %}
+                <h1 class="text2 title_game">Instrucciones de módulo de operación:</h1>
+                <p class="text2">En este modo se utiliza un módulo de captación especializado. Se genera un estímulo hasta que el usuario reacciona ante el.
+                    Para detener el entrenamiento deberas de hacer click en detener entrenamiento, luego podras guardar tus resultados. 
+                </p>
+                <br>
+                <p class="text2">Tiempo entre cada activación en segundos:</p>
+                <br>
+                <p style="margin: auto" class="text3"><input type="number" name="time_activation" required min="1" max="30"> seg.</p> 
+                <br>
+            <div class="subcontent">
+                <a href="homepage.html"><button type="button" class="btn_return">Regresar</button></a>
+                <input type="submit" id="button_start" value="Iniciar">
+            </div>
+            </form>
+        </div>
+    </div>
+    {% endblock content %}
+    {% block bar %}
+    <div id="footer">
+        <ul class="menuBar">
+            <li><a href="faq.html" class="bar_option">Preguntas frecuentes</a></li>
+            <li><a href="contact.html" class="bar_option">Contáctanos</a></li>
+            <li><a href="homepage.html" class="bar_option">Inicio</a></li>
+        </ul>
+    </div>
+</div>
+{% endblock bar %}
+
+

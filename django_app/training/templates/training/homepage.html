@@ -1,0 +1,29 @@
+﻿{% extends "base.html" %}
+
+{% block static %}
+   
+{% endblock static %}
+{% block content %}
+<div id="main">
+    <div><form action="/logout"><button id="btn_logout">Log out</button></form></div>
+    <div id="header">
+        <h1 class="title">Quick Trainner</h1>
+        <p class="text1">Iniciemos el entrenamiento, bienvenido {{user}}</p>
+    </div>
+    <div id="content">
+        <div class="b"><a href="modo_captura.html"><button class="button">Capturar Tiempo</button></a></div>
+        <div class="b"><a href="entrenamiento.html"><button class="button">Entrenamiento</button></a></div>
+        <div class="b"><a href="games.html"><button class="button">Juegos</button></a></div>
+        <div class="b"><a href="config.html"><button class="button">Configuración</button></a></div>
+    </div>
+    {% endblock content %}
+    {% block bar %}
+    <div id="footer">
+        <ul class="menuBar">
+            <li><a href="faq.html" class="bar_option">Preguntas frecuentes</a></li>
+            <li><a href="contact.html" class="bar_option">Contáctanos</a></li>
+            <li><a href="homepage.html" class="bar_option">Inicio</a></li>
+        </ul>
+    </div>
+</div>
+{% endblock bar %}

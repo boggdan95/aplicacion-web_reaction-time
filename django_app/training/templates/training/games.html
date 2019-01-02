@@ -1,0 +1,50 @@
+﻿{% extends "base.html" %}
+
+{% block static %}
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'training/styles/theme_train.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'training/styles/theme.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'training/styles/theme_game.css' %}">
+<script type="text/javascript" src="{% static 'training/scripts/script.js' %}"></script>
+{% endblock static %}
+{% block content %}
+<div id="main">
+    <div id="header">
+        <h1 class="title">Quick Trainner</h1>
+        <p class="text1">¿Listo para jugar, {{user}}?</p>
+    </div>
+    <div id="content">
+        <form action="/createGame" method="post">
+            {% if messages %}
+                {% for message in messages %}
+            <div class="alert">
+                <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                <strong>{{ message }}</strong> 
+              </div>
+              {% endfor %}
+            {% endif %}
+        {% csrf_token %}
+        {% for game in games_list %}
+            <div class="b">
+                <input type="radio" id="{{game.id}}" name="group_radio" class="check_btn" value="{{game.name}}">
+                <label for="{{game.id}}"class="button_game">{{game.name}}</label>
+            </div>
+        {% endfor %}
+        <div class="subcontent">
+                <a href="homepage.html"><button type="button" class="btn_return">Regresar</button></a>
+                <a href="instrucciones.html"><button type="button" id="btn_instruction">Instrucciones</button></a>
+                <input type="submit" id="button_start_G" value="Iniciar">
+        </div>
+        </form>
+    </div>
+    {% endblock content %}
+    {% block bar %}
+    <div id="footer">
+        <ul class="menuBar">
+            <li><a href="faq.html" class="bar_option">Preguntas frecuentes</a></li>
+            <li><a href="contact.html" class="bar_option">Contáctanos</a></li>
+            <li><a href="homepage.html" class="bar_option">Inicio</a></li>
+        </ul>
+    </div>
+</div>
+{% endblock bar %}

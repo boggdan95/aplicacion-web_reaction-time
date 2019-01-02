@@ -1,0 +1,80 @@
+#button_start_G {
+  -moz-border-radius: 28;
+  -webkit-border-radius: 28;
+  background: #0099ff;
+  border-radius: 28px;
+  border: solid #000000 3px;
+  color: #ffffff;
+  display: inline-block;
+  font-family: Courier New;
+  font-size: 26px;
+  margin: auto;
+  padding: 10px 10px 10px 10px;
+  position: relative;
+}
+
+#button_start_G:hover {
+  background: #66ccff;
+  text-decoration: none;
+}
+
+.button_game {
+  background: #009933;
+  display: inline-block;
+  margin: 5px;
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Courier New;
+  color: #ffffff;
+  font-size: 26px;
+  position: relative;
+  border: solid #000000 3px;
+  padding: 10px 10px 10px 10px;
+}
+
+.button_game:hover {
+  background: #00cc00;
+  text-decoration: none;
+}
+
+#btn_instruction {
+  background: #555555;
+  display: inline-block;
+  margin: auto;
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Courier New;
+  color: #ffffff;
+  font-size: 26px;
+  position: relative;
+  border: solid #000000 3px;
+  padding: 13px 40px 11px 40px;
+}
+
+#btn_instruction:hover{
+  background: #333333;
+  text-decoration: none;
+}
+
+.check_btn{
+  opacity: 0;
+}
+
+input[type="radio"]:checked+label{
+  font-weight: bold; 
+  background: #0066cc;
+} 
+
+.title_game{
+  font-weight: bold;
+  margin-top: 0px;
+  margin-bottom: 1px;
+}
+
+.instruction_cointainer{
+  height: 10% auto;
+  width: 75%;
+  margin:0 auto;
+  }

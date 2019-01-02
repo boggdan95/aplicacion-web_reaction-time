@@ -1,0 +1,180 @@
+#timer{
+  margin: auto;
+  text-align: center;
+}
+
+#results_panel{
+  height: 200px;
+  width: 60%;
+  overflow: auto;
+  margin: auto;
+}
+
+#consult_panel{
+  height: 40%;
+  width: 60%;
+  overflow: auto;
+  margin: auto;
+}
+
+
+.hide_description{
+  visibility: hidden;
+  height: 0px;
+  line-height: 0;
+}
+
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  margin: auto;
+  background-color: #fff;
+  table-layout: auto;
+}
+
+th, td {
+  white-space: nowrap;
+  text-align: center;
+}
+
+#button_start {
+  -moz-border-radius: 28;
+  -webkit-border-radius: 28;
+  background: #009933;
+  border-radius: 28px;
+  border: solid #000000 3px;
+  color: #ffffff;
+  display: inline-block;
+  font-family: Courier New;
+  font-size: 26px;
+  margin: auto;
+  margin-bottom: 1%;
+  margin-top: 1%;
+  padding: 10px 10px 10px 10px;
+  position: relative;
+}
+
+#button_start:hover {
+  background: #00cc00;
+  text-decoration: none;
+}
+
+.btn_home{
+  -moz-border-radius: 28;
+  -webkit-border-radius: 28;
+  background: #ff3300;
+  border-radius: 28px;
+  border: solid #000000 3px;
+  color: #ffffff;
+  display: block;
+  font-family: Courier New;
+  font-size: 26px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1%;
+  margin: auto;
+  padding: 10px 10px 10px 10px;
+  position: relative;
+}
+
+.btn_home:hover{
+  background: #660033;
+  text-decoration: none;
+}
+
+#save_results{
+  -moz-border-radius: 28;
+  -webkit-border-radius: 28;
+  background: #ff3300;
+  border-radius: 28px;
+  border: solid #000000 3px;
+  color: #ffffff;
+  display: none;
+  font-family: Courier New;
+  font-size: 26px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1%;
+  margin: auto;
+  padding: 10px 10px 10px 10px;
+  position: relative;
+}
+
+#save_results:hover{
+  background: #660033;
+  text-decoration: none;
+}
+
+#button_stop{
+  -moz-border-radius: 28;
+  -webkit-border-radius: 28;
+  background: #ff3300;
+  border-radius: 28px;
+  border: solid #000000 3px;
+  color: #ffffff;
+  display: none;
+  font-family: Courier New;
+  font-size: 26px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1%;
+  margin: auto;
+  padding: 10px 10px 10px 10px;
+  position: relative;
+}
+
+#button_stop:hover{
+  background: #660033;
+  text-decoration: none;
+}
+
+#btn_results{
+  -moz-border-radius: 28;
+  -webkit-border-radius: 28;
+  background: #136cf9;
+  border-radius: 28px;
+  border: solid #000000 3px;
+  color: #ffffff;
+  display: inline-block;
+  font-family: Courier New;
+  font-size: 26px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1%;
+  margin: auto;
+  padding: 10px 10px 10px 10px;
+  position: relative;
+  /* visibility: hidden; */
+}
+
+#btn_results:hover{
+  background: #33ccff;
+  text-decoration: none;
+}
+
+.drop_menu {
+  text-align: right;
+  background: transparent;
+  border: none;
+  font-size: 14px;
+  height: 29px;
+  padding: 5px;
+  /* If you add too much padding here, the options won't show in IE */
+  width: auto;
+ -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  background-color: #e6ee96;
+}
+
+  .input-w label, .input-w p {
+  float: none; /* if you had floats before? otherwise inline-block will behave differently */
+  display: inline-block;
+  vertical-align: middle;
+}
+
+#id_is_secuencial{
+    height:20px;
+    overflow:hidden;
+    width:20px;
+}

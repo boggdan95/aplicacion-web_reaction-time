@@ -1,0 +1,38 @@
+﻿{% extends "base.html" %}
+
+{% block static %}
+    {% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'training/styles/theme_train.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'training/styles/theme.css' %}">
+<script src="http://127.0.0.1:5000/socket.io/socket.io.js"></script>
+<script type="text/javascript" src="{% static 'training/scripts/script.js' %}"></script>
+{% endblock static %}
+{% block content %}
+<div class="main">
+    <div id="header">
+        <h1 class="title">Quick Trainner</h1>
+        <p class="text1">{{user}}, has iniciado tu entrenamiento</p>
+    </div>
+    <div id="results_panel" class="content">
+            <p id="timer" class="text2"></p>     
+         <form action="/saveTrainingResults" id="results" method="POST">
+            {% csrf_token %}
+            <p id="session_description" class="hide_description">{% autoescape off %}{{ data_of_session }}{% endautoescape %}</p>
+            <p id="generate_description" class="hide_description">{% autoescape off %}{{ description_of_session }}{% endautoescape %}</p>
+            <input type="hidden" value="" id="generate_results" name="generate_results" class="hide_description">
+            <input type="hidden" value="" id="session_id" name="session_id" class="hide_description"></p>
+        </form>
+        <table id="results_table" class="text2">
+            <th>Intento No.</th>
+            <th>Tiempo de reacción</th> 
+            <th>Acierto/Fallo</th>
+        </table>
+    </div>
+    <div class="subcontent">
+        <input type="button" id="save_results" value="Guardar resultados" onclick="postResults()">
+        <input type="button" id="button_start" value="Iniciar" onclick="startTraining()">
+    </div>
+</div>
+{% endblock content %}
+{% block bar %}
+{% endblock bar %}

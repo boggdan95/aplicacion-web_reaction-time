@@ -1,0 +1,40 @@
+﻿{% extends "base.html" %}
+
+{% block static %}
+    {% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'training/styles/theme_train.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'training/styles/theme.css' %}">
+<script src="http://127.0.0.1:5000/socket.io/socket.io.js"></script>
+<script type="text/javascript" src="{% static 'training/scripts/stats.js' %}"></script>
+{% endblock static %}
+{% block content %}
+<div class="main">
+    <div id="header">
+        <h1 class="title">Quick Trainner</h1>
+        <p class="text1">{{user}}, estos son datos más relevantes de tus ejercicios</p>
+    </div>
+    <div id="content">
+            <form action="/captureResults" id="detailResults" method="POST">
+                {% csrf_token %}
+                <p id="session_data" class="hide_description">{% autoescape off %}{{ data_of_session }}{% endautoescape %}</p>
+                <input type="hidden" value="" id="generate_results" name="generate_results" class="hide_description">
+                <input type="hidden" value="" id="session_id" name="session_id" class="hide_description">
+            </form>
+    <div style="margin: 0px auto">
+        <h1 class="title1" >Resultados guardados satisfactoriamente</h1>
+        <div style="display:inline-block"><p class="text2 bold" style="text-align: center">Mínimo:</p><p id="minimo_value" class="text2" style="text-align: center">555</p><div>
+        <div style="display:inline-block"><p class="text2 bold" style="text-align: center">Máximo:</p><p id="maximo_value" class="text2" style="text-align: center">555</p><div>
+        <div style="display:inline-block"><p class="text2 bold" style="text-align: center">Promedio:</p><p id="average_value" class="text2" style="text-align: center">555</p><div>
+        <div style="display:inline-block"><p class="text2 bold" style="text-align: center">Aciertos:</p><p id="hit_value" class="text2" style="text-align: center">2</p>
+        <p class="text2 bold" style="text-align: center">Fallos:</p><p id="fail_value" class="text2" style="text-align: center">0</p>
+        <p class="text2 bold" style="text-align: center">Errores:</p><p id="error_value" class="text2" style="text-align: center">1</p><div>
+    </div>
+    </div>
+    <div class="subcontent" style="padding: 0px 40px 11px 40px">
+        <a href="homepage.html" style="text-decoration:none"><button type="button" class="btn_return">Página de Inicio</button></a>
+        <input type="button" id="btn_results" value="Detalle de Resultados" class="btn_results" onclick="postResults()">
+    </div>
+</div>
+{% endblock content %}
+{% block bar %}
+{% endblock bar %}

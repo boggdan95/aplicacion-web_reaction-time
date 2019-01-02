@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block static %}
+    {% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'training/styles/theme_train.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'training/styles/theme.css' %}">
+<script type="text/javascript" src="{% static 'training/scripts/canvasjs.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'training/scripts/info.js' %}"></script>
+{% endblock static %}
+{% block content %}
+<div class="main">
+    <div id="header">
+        <h1 class="title">Quick Trainner</h1>
+        <p class="text1">{{user}}, revive tu entrenamiento y tus resultados</p>
+        <p id="session_data" class="hide_description">{% autoescape off %}{{ data_of_session }}{% endautoescape %}</p>
+        <input type="hidden" value="" id="session_id" name="session_id" class="hide_description">
+    </div>
+    <div id="content" style="max-height: 700px; max-width: 500px; padding-bottom: 20px; overflow: auto; margin: 0px auto;">
+        <div>
+            <p class="text2 bold" style="text-align: center; display:inline-block">Mínimo:</p><p id="minimo_value" class="text2" style="text-align: center; display:inline-block"></p>
+            <p class="text2 bold" style="text-align: center; display:inline-block">Máximo:</p><p id="maximo_value" class="text2" style="text-align: center; display:inline-block"></p>
+            <p class="text2 bold" style="text-align: center; display:inline-block">Promedio:</p><p id="average_value" class="text2" style="text-align: center; display:inline-block"></p>
+        </div>
+        <div>
+                <div style="display:inline-block"><p class="text2 bold" style="text-align: center">Aciertos:</p><p id="hit_value" class="text2" style="text-align: center"></p></div>
+                <div style="display:inline-block"><p class="text2 bold" style="text-align: center">Fallos:</p><p id="fail_value" class="text2" style="text-align: center"></p></div>
+                <div style="display:inline-block"><p class="text2 bold" style="text-align: center">Errores:</p><p id="error_value" class="text2" style="text-align: center"></p></div> 
+        </div>
+           
+    <div id="chartContainer" style="height: 300px; max-width: 400px; margin: 0px auto;"></div>
+    <div style="padding-top: 1%"></div>
+
+    </div>
+    <div class="subcontent" style="padding: 0px 40px 11px 40px">
+        <button class="button" onclick="exportTableToCSV()">Exportar Tabla a CSV</button>
+        <a href="user.html" style="text-decoration:none"><button type="button" class="btn_return">Consultar</button></a>
+    </div>
+</div>
+{% endblock content %}
+{% block bar %}
+    <div id="footer">
+        <ul class="menuBar">
+            <li><a href="faq.html" class="bar_option">Preguntas frecuentes</a></li>
+            <li><a href="contact.html" class="bar_option">Contáctanos</a></li>
+            <li><a href="homepage.html" class="bar_option">Inicio</a></li>
+        </ul>
+    </div>
+</div>
+{% endblock bar %}

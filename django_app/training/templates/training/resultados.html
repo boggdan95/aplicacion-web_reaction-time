@@ -1,0 +1,29 @@
+﻿{% extends "base.html" %}
+
+{% block static %}
+    {% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'training/styles/theme_train.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'training/styles/theme.css' %}">
+<script src="http://127.0.0.1:5000/socket.io/socket.io.js"></script>
+<script type="text/javascript" src="{% static 'training/scripts/script.js' %}"></script>
+<script type="text/javascript" src="{% static 'training/scripts/canvasjs.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'training/scripts/graphics.js' %}"></script>
+{% endblock static %}
+{% block content %}
+<div class="main">
+    <div id="header">
+        <h1 class="title">Quick Trainner</h1>
+        <p class="text1">{{user}}, estos son los resultados de tu entrenamiento</p>
+        <p id="session_data" class="hide_description">{% autoescape off %}{{ data_of_session }}{% endautoescape %}</p>
+    </div>
+    <div id="content">
+    <div id="chartContainer" style="height: 300px; max-width: 600px; margin: 0px auto;"></div>
+    <div id="resumeResults" style="height: 25px; max-width: 600px; margin: 0px auto; padding-top: 1%"></div>
+    </div>
+    <div class="subcontent" style="padding: 0px 40px 11px 40px">
+        <a href="homepage.html" style="text-decoration:none"><button type="button" class="btn_return">Página de Inicio</button></a>
+    </div>
+</div>
+{% endblock content %}
+{% block bar %}
+{% endblock bar %}

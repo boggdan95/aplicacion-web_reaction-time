@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\pruebaV1_django",
+    "\\training",
+    "\\training\\migrations",
+    "\\training\\static",
+    "\\training\\static\\training",
+    "\\training\\static\\training\\scripts",
+    "\\training\\static\\training\\styles",
+    "\\training\\templates",
+    "\\training\\templates\\registration"
+  ],
+  "SelectedNode": "\\pruebaV1_django\\settings.py",
+  "PreviewInSolutionExplorer": false
+}

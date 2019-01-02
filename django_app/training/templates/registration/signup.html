@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Quick Traineer</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'training/styles/theme.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'training/styles/theme_config.css' %}">
+</head>
+<body class="body_login">
+    <div id="header">
+    </div >
+      <div class="entry_block">
+            <h1 class="font"><span></span>Registro</h1>
+            <form method="post">
+                {% csrf_token %}
+                {% for field in form %}
+                <p>
+                    {{ field.label_tag }}
+                    {{ field }}
+                        {% for error in field.errors %}
+                        <p style="color: red">{{ error }}</p>
+                        {% endfor %}
+                </p>
+                {% endfor %}
+                <button type="submit">Registrar</button>
+            </form>
+          <hr>
+          <p class="text1"> ¿Ya tienes una cuenta? <a href="login.html"> Ingresar </a></p>
+      </div>
+
+</body>
